@@ -11,30 +11,30 @@
     <div id="resultado" style="margin-top: 20px;"></div>
 
     <script>
-        // a) Solicita o nome da pessoa
+        
         const nome = prompt("Digite o seu nome:");
 
-        // b) Solicita a altura em centímetros
+      
         const alturaCmString = prompt("Digite a sua altura em centímetros:");
 
-        // c) Solicita o peso da pessoa
+    
         const pesoString = prompt("Digite o seu peso em quilogramas:");
 
-        // d) Converte as informações para o tipo float
+       
         const alturaCm = parseFloat(alturaCmString);
         const pesoKg = parseFloat(pesoString);
         const resultadoDiv = document.getElementById("resultado");
 
-        // Verifica se as entradas são números válidos
+    
         if (isNaN(alturaCm) || isNaN(pesoKg)) {
             resultadoDiv.textContent = "Erro: Por favor, digite valores numéricos válidos para altura e peso.";
         } else if (alturaCm <= 0 || pesoKg <= 0) {
             resultadoDiv.textContent = "Erro: Por favor, digite valores positivos para altura e peso.";
         } else {
-            // e) Converte a altura de centímetros para metros
+        
             const alturaM = alturaCm / 100;
 
-            // f) Calcula o Índice de Massa Corporal (IMC)
+          
             const imc = pesoKg / (alturaM * alturaM);
             const imcArredondado = imc.toFixed(2);
 
@@ -57,7 +57,7 @@
                 classificacao = "Obesidade grau III";
             }
 
-            // 8) Ao término o sistema deve fornecer a seguinte saída para o usuário:
+   
             resultadoDiv.textContent = `${nome} possui índice de massa corporal igual a ${imcArredondado}, sendo classificado como: ${classificacao}.`;
         }
     </script>
